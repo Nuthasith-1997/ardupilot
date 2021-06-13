@@ -1,5 +1,25 @@
 Rover Release Notes:
 --------------------------------
+Rover 4.1.0-beta4 12-Jun-2021
+Changes from 4.1.0-beta3
+1) Rover/Boat specific enhancements and bug fixes
+    a) DShot support fixed
+    b) Simple Avoidance fix to allow backing away from obtacles
+    c) THR onboard log message logs forward-back acceleration
+    d) Waypoint delay of -1 does not delay
+2) Minor enhancements
+    a) CSRF telemetry improvements to power setting and pass param requests more quickly
+    b) CUAV X7/Nora supports ICM42688P IMU
+    c) Pix32v5 USB product string fixed and IMU heater enabled 
+    d) RunCam Hybrid supported (see RUNCAM_TYPE parameter)
+3) Bug fixes
+    a) BLHeli Auto only affects telemetry passthrough to ease setup
+    b) Circular complex fence radius not truncated
+    c) EKF ground effect compensation fixed
+    d) I/O MCU reset fix if user had disabled safety switch (recovery from reset would leave motors not spinning)
+    e) PreArm check of roll/pitch and yaw angle difference fixed
+    f) Serial port info file (@SYS/uarts.txt) easier to understand
+--------------------------------
 Rover 4.1.0-beta3 24-May-2021
 Changes from 4.1.0-beta2
 1) Dshot bug fix for autopilots with I/O boards (CubeBlack, CubeOrange, etc)
@@ -710,7 +730,7 @@ for 3 new boards in this release. They are:
  - the Pixracer
 
 More information about the list of supported boards is available here:
-http://dev.ardupilot.org/wiki/supported-autopilot-controller-boards/
+https://ardupilot.org/copter/docs/common-autopilots.html
 
 Startup on a moving platform
 ----------------------------
