@@ -26,7 +26,7 @@
 
    APMrover alpha version tester: Franco Borasio, Daniel Chapelat...
 
-   Please contribute your ideas! See https://dev.ardupilot.org for details
+   Please contribute your ideas! See https://ardupilot.org/dev for details
 */
 
 #include "Rover.h"
@@ -55,7 +55,7 @@ const AP_Scheduler::Task Rover::scheduler_tasks[] = {
     SCHED_TASK(set_servos,            400,    200),
     SCHED_TASK_CLASS(AP_GPS,              &rover.gps,              update,         50,  300),
     SCHED_TASK_CLASS(AP_Baro,             &rover.barometer,        update,         10,  200),
-    SCHED_TASK_CLASS(AP_Beacon,           &rover.g2.beacon,        update,         50,  200),
+    //SCHED_TASK_CLASS(AP_Beacon,           &rover.g2.beacon,        update,         50,  200),
 #if HAL_PROXIMITY_ENABLED
     SCHED_TASK_CLASS(AP_Proximity,        &rover.g2.proximity,     update,         50,  200),
 #endif
@@ -76,9 +76,9 @@ const AP_Scheduler::Task Rover::scheduler_tasks[] = {
     SCHED_TASK_CLASS(AP_Gripper,          &rover.g2.gripper,      update,         10,   75),
 #endif
     SCHED_TASK(rpm_update,             10,    100),
-#if HAL_MOUNT_ENABLED
-    SCHED_TASK_CLASS(AP_Mount,            &rover.camera_mount,     update,         50,  200),
-#endif
+//#if HAL_MOUNT_ENABLED
+//    SCHED_TASK_CLASS(AP_Mount,            &rover.camera_mount,     update,         50,  200),
+//#endif
 #if CAMERA == ENABLED
     SCHED_TASK_CLASS(AP_Camera,           &rover.camera,           update,         50,  200),
 #endif
@@ -88,9 +88,9 @@ const AP_Scheduler::Task Rover::scheduler_tasks[] = {
     SCHED_TASK_CLASS(ModeSmartRTL,        &rover.mode_smartrtl,    save_position,   3,  200),
     SCHED_TASK_CLASS(AP_Notify,           &rover.notify,           update,         50,  300),
     SCHED_TASK(one_second_loop,         1,   1500),
-#if HAL_SPRAYER_ENABLED
-    SCHED_TASK_CLASS(AC_Sprayer,          &rover.g2.sprayer,           update,      3,  90),
-#endif
+//#if HAL_SPRAYER_ENABLED
+//    SCHED_TASK_CLASS(AC_Sprayer,          &rover.g2.sprayer,           update,      3,  90),
+//#endif
     SCHED_TASK_CLASS(Compass,          &rover.compass,              cal_update, 50, 200),
     SCHED_TASK(compass_save,           0.1,   200),
     SCHED_TASK(accel_cal_update,       10,    200),
@@ -99,7 +99,7 @@ const AP_Scheduler::Task Rover::scheduler_tasks[] = {
 #endif
     SCHED_TASK_CLASS(AP_InertialSensor,   &rover.ins,              periodic,      400,  200),
     SCHED_TASK_CLASS(AP_Scheduler,        &rover.scheduler,        update_logging, 0.1, 200),
-    SCHED_TASK_CLASS(AP_Button,           &rover.button,           update,          5,  200),
+    //SCHED_TASK_CLASS(AP_Button,           &rover.button,           update,          5,  200),
 #if STATS_ENABLED == ENABLED
     SCHED_TASK(stats_update,            1,    200),
 #endif
@@ -108,7 +108,7 @@ const AP_Scheduler::Task Rover::scheduler_tasks[] = {
 #if ADVANCED_FAILSAFE == ENABLED
     SCHED_TASK(afs_fs_check,           10,    200),
 #endif
-    SCHED_TASK(read_airspeed,          10,    100),
+    //SCHED_TASK(read_airspeed,          10,    100),
 };
 
 

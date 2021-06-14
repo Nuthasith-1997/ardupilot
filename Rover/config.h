@@ -63,14 +63,14 @@
 // CAMERA control
 //
 #ifndef CAMERA
-  #define CAMERA ENABLED
+  #define CAMERA DISABLED
 #endif
 
 //////////////////////////////////////////////////////////////////////////////
 // GRIPPER control
 //
 #ifndef GRIPPER_ENABLED
- # define GRIPPER_ENABLED ENABLED
+ # define GRIPPER_ENABLED DISABLE
 #endif
 
 //////////////////////////////////////////////////////////////////////////////
