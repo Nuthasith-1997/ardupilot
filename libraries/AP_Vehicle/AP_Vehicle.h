@@ -46,6 +46,7 @@
 #include <AP_Frsky_Telem/AP_Frsky_Parameters.h>
 #include <AP_ExternalAHRS/AP_ExternalAHRS.h>
 #include <AP_VideoTX/AP_SmartAudio.h>
+#include <AP_Motors/AP_ZLTECH_RS485.h>
 
 class AP_Vehicle : public AP_HAL::HAL::Callbacks {
 
@@ -291,6 +292,8 @@ protected:
     // notification object for LEDs, buzzers etc (parameter set to
     // false disables external leds)
     AP_Notify notify;
+
+    AP_ZLTECH_RS485 zltech_rs485;
 
     // Inertial Navigation EKF
 #if AP_AHRS_NAVEKF_AVAILABLE
