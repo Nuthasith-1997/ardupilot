@@ -293,8 +293,6 @@ protected:
     // false disables external leds)
     AP_Notify notify;
 
-    AP_ZLTECH_RS485 zltech_rs485;
-
     // Inertial Navigation EKF
 #if AP_AHRS_NAVEKF_AVAILABLE
     AP_AHRS_NavEKF ahrs;

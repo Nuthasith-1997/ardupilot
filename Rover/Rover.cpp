@@ -53,7 +53,6 @@ const AP_Scheduler::Task Rover::scheduler_tasks[] = {
     SCHED_TASK(read_rangefinders,      50,    200),
     SCHED_TASK(update_current_mode,   400,    200),
     SCHED_TASK(set_servos,            400,    200),
-    SCHED_TASK(zltech_test,            50,    200),
     SCHED_TASK_CLASS(AP_GPS,              &rover.gps,              update,         50,  300),
     SCHED_TASK_CLASS(AP_Baro,             &rover.barometer,        update,         10,  200),
     //SCHED_TASK_CLASS(AP_Beacon,           &rover.g2.beacon,        update,         50,  200),
@@ -225,10 +224,6 @@ void Rover::stats_update(void)
     g2.stats.update();
 }
 #endif
-
-void Rover::zltech_test(){
-    zltech_rs485.send_msg();
-}
 
 // update AHRS system
 void Rover::ahrs_update()
